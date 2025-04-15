@@ -1,4 +1,3 @@
-
 async function uploadFile() {
     const fileInput = document.getElementById("fileInput");
     const formatSelect = document.getElementById("formatSelect");
@@ -11,23 +10,35 @@ async function uploadFile() {
     }
 
     const formData = new FormData();
-    formData.append("file", fileInput.files[0]);
-    formData.append("format", formatSelect.value);
+    formData.append("image_file", fileInput.files[0]);
+    formData.append("size", "auto");
 
-    message.textContent = "Converting file...";
+    message.textContent = "Removing background...";
     message.style.color = "blue";
 
     try {
-        const response = await fetch("http://localhost:8080/convert", {
+        const response = await fetch("https://api.remove.bg/v1.0/removebg", {
             method: "POST",
+            headers: {
+                "X-Api-Key": "dv8bAjnKeXEbrEKpXody14VV"
+            },
             body: formData
         });
 
-        const result = await response.json();
-        message.textContent = result.message;
+        if (!response.ok) throw new Error("Failed to remove background.");
+
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "no-bg.png";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        message.textContent = "Background removed successfully!";
         message.style.color = "green";
     } catch (error) {
-        message.textContent = "Conversion failed!";
+        message.textContent = "Failed to remove background.";
         message.style.color = "red";
     }
 }
