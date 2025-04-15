@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandconvert - Free Online File Conversion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Brandconvert</a>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#legal">Legal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Swift and Secure Free File Conversion!</h1>
+        <p>Effortlessly convert your files without any hassle or cost. Secure, fast, and simple file conversion at your fingertips.</p>
+        <a href="#convert" class="cta-btn">Start Converting</a>
+    </section>
+
+    <!-- Three Steps Section -->
+    <section id="steps" class="steps">
+        <div class="step">
+            <h2>1. Upload Your File</h2>
+            <p>Start by uploading your file, our user-friendly interface makes this process quick and simple.</p>
+        </div>
+        <div class="step">
+            <h2>2. Choose Your Format</h2>
+            <p>Select the desired format for your conversion from our wide range of options.</p>
+        </div>
+        <div class="step">
+            <h2>3. Download Your File</h2>
+            <p>Once the conversion is done, download your file with a single click, it's that easy!</p>
+        </div>
+    </section>
+
+    <!-- File Conversion Section -->
+    <section id="convert" class="convert">
+        <h2>Convert Your File</h2>
+        <input type="file" id="fileInput" />
+        <select id="formatSelect">
+            <option value="pdf">PDF</option>
+            <option value="docx">DOCX</option>
+            <option value="jpg">JPG</option>
+            <option value="png">PNG</option>
+        </select>
+        <button onclick="uploadFile()">Convert</button>
+        <div id="message"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="feature">
+            <h3>Effortless and Speedy</h3>
+            <p>Drag and drop your files, select the format, and click 'Convert'. Simple and fast!</p>
+        </div>
+        <div class="feature">
+            <h3>No Trace, No Worries</h3>
+            <p>Your privacy is important. We don’t store your files. Once converted, the files are permanently deleted.</p>
+        </div>
+        <div class="feature">
+            <h3>Cross-Platform Accessibility</h3>
+            <p>Accessible from any device. Whether you are on a computer, tablet, or smartphone, our service works everywhere.</p>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
+        <h2>Our Tools</h2>
+        <div class="tool">
+            <img src="background-remover.png" alt="Background Remover">
+            <h3>Background Image Remover</h3>
+        </div>
+        <div class="tool">
+            <img src="image-converter.png" alt="Image Converter">
+            <h3>Image Format Converter</h3>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a>
+        </div>
+        <div class="partners">
+            <p>Trusted Partners:</p>
+            <ul>
+                <li><a href="#">Gen AI Prism</a></li>
+                <li><a href="#">BAI.tools</a></li>
+                <li><a href="#">AI Tool Trek</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 Brandconvert. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
