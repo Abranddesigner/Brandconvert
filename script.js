@@ -1,44 +1,74 @@
-async function uploadFile() {
-    const fileInput = document.getElementById("fileInput");
-    const formatSelect = document.getElementById("formatSelect");
-    const message = document.getElementById("message");
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #333;
+  text-align: center;
+}
 
-    if (!fileInput.files.length) {
-        message.textContent = "Please select a file.";
-        message.style.color = "red";
-        return;
-    }
+header img.header-img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+}
 
-    const formData = new FormData();
-    formData.append("image_file", fileInput.files[0]);
-    formData.append("size", "auto");
+.pi-logo {
+  width: 80px;
+  margin-top: 1rem;
+}
 
-    message.textContent = "Removing background...";
-    message.style.color = "blue";
+h1, h2 {
+  margin: 0.5rem 0;
+}
 
-    try {
-        const response = await fetch("https://api.remove.bg/v1.0/removebg", {
-            method: "POST",
-            headers: {
-                "X-Api-Key": "dv8bAjnKeXEbrEKpXody14VV"
-            },
-            body: formData
-        });
+.core-apps {
+  padding: 2rem 1rem;
+}
 
-        if (!response.ok) throw new Error("Failed to remove background.");
+.apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
 
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "no-bg.png";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        message.textContent = "Background removed successfully!";
-        message.style.color = "green";
-    } catch (error) {
-        message.textContent = "Failed to remove background.";
-        message.style.color = "red";
-    }
+.apps a {
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s;
+}
+
+.apps a:hover {
+  transform: scale(1.05);
+}
+
+.apps img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.apps p {
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.privacy {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer img {
+  width: 100px;
+  cursor: pointer;
 }
