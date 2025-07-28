@@ -1,57 +1,65 @@
 /* style.css */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff;
+  background-color: #fdfdfd;
   color: #333;
   text-align: center;
 }
 
 header img.header-img {
   width: 100%;
-  max-height: 180px;
+  max-height: 200px;
   object-fit: cover;
 }
 
 .pi-logo {
   width: 80px;
-  margin-top: 1rem;
+  margin-top: 20px;
 }
 
 h1, h2 {
   margin: 0.5rem 0;
+  font-weight: 600;
 }
 
 .core-apps {
   padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
 }
 
 .apps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 2rem;
-  max-width: 800px;
-  margin: 2rem auto;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .apps a {
   text-decoration: none;
-  color: #333;
-  transition: transform 0.2s;
+  color: inherit;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 .apps a:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .apps img {
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
 }
 
 .apps p {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   font-weight: 500;
 }
 
@@ -60,15 +68,16 @@ h1, h2 {
   margin-top: 2rem;
   color: #007bff;
   text-decoration: underline;
+  font-size: 14px;
 }
 
 footer {
-  background-color: #f2f2f2;
-  padding: 1rem;
-  margin-top: 2rem;
+  background-color: #f4f4f4;
+  padding: 1.5rem;
+  margin-top: 3rem;
 }
 
 footer img {
-  width: 100px;
+  width: 120px;
   cursor: pointer;
 }
